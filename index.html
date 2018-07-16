@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Consilium</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -16,6 +16,22 @@
         margin: 0;
         padding: 0;
       }
+
+      .controls {
+        
+        width: 100%;
+        height: 50%;
+        float:right;
+      }
+
+      .content {
+        text-align: center;
+        margin-top: 2em;
+        color:black;
+        background-color: purple;
+      }
+
+
     </style>
     <script type="text/javascript">
 
@@ -26,6 +42,7 @@
         request.onload = function() {
           var data = JSON.parse(request.responseText);
           console.log(data)
+          document.getElementById("main-header").innerHTML = "New York"
         }
         request.send();
       }
@@ -34,7 +51,8 @@
   </head>
   <body>
     <div id="map"></div>
-    <script>
+
+    <script>  
       function initMap() {
         var start = {lat: 40.7128, lng: -74.0060};
 
@@ -50,80 +68,87 @@
           label: ''
         });
 
-//**NEW YORK STATE**\\
-
-        var myCoordinates = [
-new google.maps.LatLng(45.008589,-73.388542),
-new google.maps.LatLng(43.593408,-73.410515),
-new google.maps.LatLng(43.306279,-73.278679),
-new google.maps.LatLng(42.744073,-73.300652),
-new google.maps.LatLng(42.420502,-73.432488),
-new google.maps.LatLng(42.078947,-73.476433),
-new google.maps.LatLng(41.882942,-73.498405),
-new google.maps.LatLng(41.571368,-73.542351),
-new google.maps.LatLng(41.307818,-73.520378),
-new google.maps.LatLng(41.208711,-73.498405),
-new google.maps.LatLng(41.076335,-73.674187),
-new google.maps.LatLng(40.927092,-73.696159),
-new google.maps.LatLng(40.993464,-73.256706),
-new google.maps.LatLng(41.208711,-72.333855),
-new google.maps.LatLng(41.274799,-71.960320),
-new google.maps.LatLng(41.192179,-71.806511),
-new google.maps.LatLng(41.059769,-71.762566),
-new google.maps.LatLng(40.943691,-72.004265),
-new google.maps.LatLng(40.777511,-72.487663),
-new google.maps.LatLng(40.560854,-73.476433),
-new google.maps.LatLng(40.560854,-74.047722),
-new google.maps.LatLng(40.976877,-73.915886),
-new google.maps.LatLng(41.423253,-74.750847),
-new google.maps.LatLng(41.587804,-75.036491),
-new google.maps.LatLng(41.784713,-75.058464),
-new google.maps.LatLng(41.915651,-75.278191),
-new google.maps.LatLng(41.997351,-75.366081),
-new google.maps.LatLng(41.997351,-79.782585),
-new google.maps.LatLng(42.501553,-79.826530),
-new google.maps.LatLng(42.889132,-78.925652),
-new google.maps.LatLng(43.049910,-78.991570),
-new google.maps.LatLng(43.098061,-79.057488),
-new google.maps.LatLng(43.450014,-79.189323),
-new google.maps.LatLng(43.672924,-78.705925),
-new google.maps.LatLng(43.657029,-76.816277),
-new google.maps.LatLng(44.226589,-76.354851),
-new google.maps.LatLng(44.540653,-75.805534),
-new google.maps.LatLng(44.993053,-74.816765)
-];
-var polyOptions = {
-path: myCoordinates,
-strokeColor: "#FF0000",
-strokeOpacity: 0.8,
-strokeWeight: 2,
-fillColor: "#8aa5d1",
-fillOpacity: 0.4
-}
-var NewYork = new google.maps.Polygon(polyOptions);
-NewYork.setMap(map);
-NewYork.addListener('click', function() {
-  console.log("memes");
-});
-      }
-
-      
-      
-
-        
-
-        // Open a new connection, using the GET request on the URL endpoint
-        
-
-        
+          //**NEW YORK STATE**\\
 
 
-      
-    </script>
+                  var myCoordinates = [
+            new google.maps.LatLng(45.008589,-73.388542),
+            new google.maps.LatLng(43.593408,-73.410515),
+            new google.maps.LatLng(43.306279,-73.278679),
+            new google.maps.LatLng(42.744073,-73.300652),
+            new google.maps.LatLng(42.420502,-73.432488),
+            new google.maps.LatLng(42.078947,-73.476433),
+            new google.maps.LatLng(41.882942,-73.498405),
+            new google.maps.LatLng(41.571368,-73.542351),
+            new google.maps.LatLng(41.307818,-73.520378),
+            new google.maps.LatLng(41.208711,-73.498405),
+            new google.maps.LatLng(41.076335,-73.674187),
+            new google.maps.LatLng(40.927092,-73.696159),
+            new google.maps.LatLng(40.993464,-73.256706),
+            new google.maps.LatLng(41.208711,-72.333855),
+            new google.maps.LatLng(41.274799,-71.960320),
+            new google.maps.LatLng(41.192179,-71.806511),
+            new google.maps.LatLng(41.059769,-71.762566),
+            new google.maps.LatLng(40.943691,-72.004265),
+            new google.maps.LatLng(40.777511,-72.487663),
+            new google.maps.LatLng(40.560854,-73.476433),
+            new google.maps.LatLng(40.560854,-74.047722),
+            new google.maps.LatLng(40.976877,-73.915886),
+            new google.maps.LatLng(41.423253,-74.750847),
+            new google.maps.LatLng(41.587804,-75.036491),
+            new google.maps.LatLng(41.784713,-75.058464),
+            new google.maps.LatLng(41.915651,-75.278191),
+            new google.maps.LatLng(41.997351,-75.366081),
+            new google.maps.LatLng(41.997351,-79.782585),
+            new google.maps.LatLng(42.501553,-79.826530),
+            new google.maps.LatLng(42.889132,-78.925652),
+            new google.maps.LatLng(43.049910,-78.991570),
+            new google.maps.LatLng(43.098061,-79.057488),
+            new google.maps.LatLng(43.450014,-79.189323),
+            new google.maps.LatLng(43.672924,-78.705925),
+            new google.maps.LatLng(43.657029,-76.816277),
+            new google.maps.LatLng(44.226589,-76.354851),
+            new google.maps.LatLng(44.540653,-75.805534),
+            new google.maps.LatLng(44.993053,-74.816765)
+            ];
+            var polyOptions = {
+            path: myCoordinates,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#8aa5d1",
+            fillOpacity: 0.4
+            }
+            var NewYork = new google.maps.Polygon(polyOptions);
+            NewYork.setMap(map);
+            NewYork.addListener('click', function() {
+              legislate();
+            });
+                  }
+
+                  
+                  
+
+                    
+
+                    // Open a new connection, using the GET request on the URL endpoint
+                    
+
+                    
+
+
+                  
+                </script>
+    
+
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDgsV7TLo3baIMfeq3GC1vn8FGpNhXHI&callback=initMap"
     async defer></script>
+    <div class="controls">
+      <div class="content">
+        <h1 id="main-header"> Select a highlighted state from above</h1>
+      </div>
 
-    <button onclick="legislate()"> click me </button>
-    
+    </div>
   </body>
 </html>
